@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="35f94053-6aef-47fb-8e1f-1048eceb7967" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tournament.py" afterPath="$PROJECT_DIR$/tournament.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tournament.sql" afterPath="$PROJECT_DIR$/tournament.sql" />
     </list>
@@ -36,15 +37,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
-          <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+          <provider selected="true" editor-type-id="MultiMarkdownFxPreviewEditor">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+          <provider editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="90">
-                <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+              <first_editor relative-caret-position="165">
+                <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -55,8 +56,8 @@
       <file leaf-file-name="tournament.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tournament.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="3" selection-end-line="57" selection-end-column="35" />
+            <state relative-caret-position="687">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,25 +73,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tournament.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tournament.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tournament.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
+            <state relative-caret-position="345">
+              <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
               <folding>
-                <marker date="1459170266000" expanded="true" signature="544:574" placeholder="DELETE FROM " />
-                <marker date="1459170266000" expanded="true" signature="564:574" placeholder="UPDATE playe... " />
-                <marker date="1459170266000" expanded="true" signature="738:768" placeholder="DELETE FROM " />
-                <marker date="1459170266000" expanded="true" signature="934:971" placeholder="SELECT count... players" />
-                <marker date="1459170266000" expanded="true" signature="1510:1544" placeholder="INSERT INTO players... " />
-                <marker date="1459170266000" expanded="true" signature="1510:1554" placeholder="INSERT INTO players... " />
-                <marker date="1459170266000" expanded="true" signature="1510:1555" placeholder="INSERT INTO players... " />
-                <marker date="1459170266000" expanded="true" signature="2234:6149" placeholder="fetch all th... " />
-                <marker date="1459170266000" expanded="true" signature="2322:2642" placeholder="SELECT match... matches_tracker" />
-                <marker date="1459170266000" expanded="true" signature="3099:3247" placeholder="SELECT match... matches_tracker" />
-                <marker date="1459170266000" expanded="true" signature="3550:3646" placeholder="INSERT INTO matches... " />
-                <marker date="1459170266000" expanded="true" signature="3699:3777" placeholder="INSERT INTO matches... " />
-                <marker date="1459170266000" expanded="true" signature="3885:4241" placeholder="INSERT INTO matches... " />
+                <marker date="1459170902000" expanded="true" signature="544:574" placeholder="DELETE FROM " />
+                <marker date="1459170902000" expanded="true" signature="564:574" placeholder="UPDATE playe... " />
+                <marker date="1459170902000" expanded="true" signature="738:768" placeholder="DELETE FROM " />
+                <marker date="1459170902000" expanded="true" signature="934:971" placeholder="SELECT count... players" />
+                <marker date="1459170902000" expanded="true" signature="1510:1544" placeholder="INSERT INTO players... " />
+                <marker date="1459170902000" expanded="true" signature="1510:1554" placeholder="INSERT INTO players... " />
+                <marker date="1459170902000" expanded="true" signature="1510:1555" placeholder="INSERT INTO players... " />
+                <marker date="1459170902000" expanded="true" signature="1869:1882" placeholder="INSERT INTO trou... " />
+                <marker date="1459170902000" expanded="true" signature="1869:1914" placeholder="INSERT INTO tournaments... " />
+                <marker date="1459170902000" expanded="true" signature="2556:6914" placeholder="fetch all th... " />
+                <marker date="1459170902000" expanded="true" signature="2644:2964" placeholder="SELECT match... matches_tracker" />
+                <marker date="1459170902000" expanded="true" signature="3435:3577" placeholder="SELECT count... matches" />
+                <marker date="1459170902000" expanded="true" signature="3636:3764" placeholder="SELECT count... matches" />
+                <marker date="1459170902000" expanded="true" signature="4314:4410" placeholder="INSERT INTO matches... " />
+                <marker date="1459170902000" expanded="true" signature="4463:4541" placeholder="INSERT INTO matches... " />
+                <marker date="1459170902000" expanded="true" signature="4650:5006" placeholder="INSERT INTO matches... " />
               </folding>
             </state>
           </provider>
@@ -115,9 +119,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/tournament.sql" />
         <option value="$PROJECT_DIR$/tournament.py" />
+        <option value="$PROJECT_DIR$/tournament.sql" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -455,10 +459,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -521,19 +525,22 @@
         <state relative-caret-position="1560">
           <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
           <folding>
-            <marker date="1459170266000" expanded="true" signature="544:574" placeholder="DELETE FROM " />
-            <marker date="1459170266000" expanded="true" signature="564:574" placeholder="UPDATE playe... " />
-            <marker date="1459170266000" expanded="true" signature="738:768" placeholder="DELETE FROM " />
-            <marker date="1459170266000" expanded="true" signature="934:971" placeholder="SELECT count... players" />
-            <marker date="1459170266000" expanded="true" signature="1510:1544" placeholder="INSERT INTO players... " />
-            <marker date="1459170266000" expanded="true" signature="1510:1554" placeholder="INSERT INTO players... " />
-            <marker date="1459170266000" expanded="true" signature="1510:1555" placeholder="INSERT INTO players... " />
-            <marker date="1459170266000" expanded="true" signature="2234:6149" placeholder="fetch all th... " />
-            <marker date="1459170266000" expanded="true" signature="2322:2642" placeholder="SELECT match... matches_tracker" />
-            <marker date="1459170266000" expanded="true" signature="3099:3247" placeholder="SELECT match... matches_tracker" />
-            <marker date="1459170266000" expanded="true" signature="3550:3646" placeholder="INSERT INTO matches... " />
-            <marker date="1459170266000" expanded="true" signature="3699:3777" placeholder="INSERT INTO matches... " />
-            <marker date="1459170266000" expanded="true" signature="3885:4241" placeholder="INSERT INTO matches... " />
+            <marker date="1459170902000" expanded="true" signature="544:574" placeholder="DELETE FROM " />
+            <marker date="1459170902000" expanded="true" signature="564:574" placeholder="UPDATE playe... " />
+            <marker date="1459170902000" expanded="true" signature="738:768" placeholder="DELETE FROM " />
+            <marker date="1459170902000" expanded="true" signature="934:971" placeholder="SELECT count... players" />
+            <marker date="1459170902000" expanded="true" signature="1510:1544" placeholder="INSERT INTO players... " />
+            <marker date="1459170902000" expanded="true" signature="1510:1554" placeholder="INSERT INTO players... " />
+            <marker date="1459170902000" expanded="true" signature="1510:1555" placeholder="INSERT INTO players... " />
+            <marker date="1459170902000" expanded="true" signature="1869:1882" placeholder="INSERT INTO trou... " />
+            <marker date="1459170902000" expanded="true" signature="1869:1914" placeholder="INSERT INTO tournaments... " />
+            <marker date="1459170902000" expanded="true" signature="2556:6914" placeholder="fetch all th... " />
+            <marker date="1459170902000" expanded="true" signature="2644:2964" placeholder="SELECT match... matches_tracker" />
+            <marker date="1459170902000" expanded="true" signature="3435:3577" placeholder="SELECT count... matches" />
+            <marker date="1459170902000" expanded="true" signature="3636:3764" placeholder="SELECT count... matches" />
+            <marker date="1459170902000" expanded="true" signature="4314:4410" placeholder="INSERT INTO matches... " />
+            <marker date="1459170902000" expanded="true" signature="4463:4541" placeholder="INSERT INTO matches... " />
+            <marker date="1459170902000" expanded="true" signature="4650:5006" placeholder="INSERT INTO matches... " />
           </folding>
         </state>
       </provider>
@@ -562,20 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tournament_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -586,31 +579,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tournament.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="3" selection-end-line="57" selection-end-column="35" />
+        <state relative-caret-position="687">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tournament.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
+        <state relative-caret-position="345">
+          <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
           <folding>
-            <marker date="1459170266000" expanded="true" signature="544:574" placeholder="DELETE FROM " />
-            <marker date="1459170266000" expanded="true" signature="564:574" placeholder="UPDATE playe... " />
-            <marker date="1459170266000" expanded="true" signature="738:768" placeholder="DELETE FROM " />
-            <marker date="1459170266000" expanded="true" signature="934:971" placeholder="SELECT count... players" />
-            <marker date="1459170266000" expanded="true" signature="1510:1544" placeholder="INSERT INTO players... " />
-            <marker date="1459170266000" expanded="true" signature="1510:1554" placeholder="INSERT INTO players... " />
-            <marker date="1459170266000" expanded="true" signature="1510:1555" placeholder="INSERT INTO players... " />
-            <marker date="1459170266000" expanded="true" signature="2234:6149" placeholder="fetch all th... " />
-            <marker date="1459170266000" expanded="true" signature="2322:2642" placeholder="SELECT match... matches_tracker" />
-            <marker date="1459170266000" expanded="true" signature="3099:3247" placeholder="SELECT match... matches_tracker" />
-            <marker date="1459170266000" expanded="true" signature="3550:3646" placeholder="INSERT INTO matches... " />
-            <marker date="1459170266000" expanded="true" signature="3699:3777" placeholder="INSERT INTO matches... " />
-            <marker date="1459170266000" expanded="true" signature="3885:4241" placeholder="INSERT INTO matches... " />
+            <marker date="1459170902000" expanded="true" signature="544:574" placeholder="DELETE FROM " />
+            <marker date="1459170902000" expanded="true" signature="564:574" placeholder="UPDATE playe... " />
+            <marker date="1459170902000" expanded="true" signature="738:768" placeholder="DELETE FROM " />
+            <marker date="1459170902000" expanded="true" signature="934:971" placeholder="SELECT count... players" />
+            <marker date="1459170902000" expanded="true" signature="1510:1544" placeholder="INSERT INTO players... " />
+            <marker date="1459170902000" expanded="true" signature="1510:1554" placeholder="INSERT INTO players... " />
+            <marker date="1459170902000" expanded="true" signature="1510:1555" placeholder="INSERT INTO players... " />
+            <marker date="1459170902000" expanded="true" signature="1869:1882" placeholder="INSERT INTO trou... " />
+            <marker date="1459170902000" expanded="true" signature="1869:1914" placeholder="INSERT INTO tournaments... " />
+            <marker date="1459170902000" expanded="true" signature="2556:6914" placeholder="fetch all th... " />
+            <marker date="1459170902000" expanded="true" signature="2644:2964" placeholder="SELECT match... matches_tracker" />
+            <marker date="1459170902000" expanded="true" signature="3435:3577" placeholder="SELECT count... matches" />
+            <marker date="1459170902000" expanded="true" signature="3636:3764" placeholder="SELECT count... matches" />
+            <marker date="1459170902000" expanded="true" signature="4314:4410" placeholder="INSERT INTO matches... " />
+            <marker date="1459170902000" expanded="true" signature="4463:4541" placeholder="INSERT INTO matches... " />
+            <marker date="1459170902000" expanded="true" signature="4650:5006" placeholder="INSERT INTO matches... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="165">
+            <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

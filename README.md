@@ -3,6 +3,11 @@ This application will create a swiss style tournament and caculate the
 results.
 
 ## How to use it:
-A test has been set up such that if you use the command
-`python ./tournament_test.py`
-The program will be run.
+
+The following steps will be used to test use this app:
+* Run the following command to create the Database and the Schema
+  `psql -f tournament.sql`
+* Run the tournament test file to verify the app
+  `python ./tournament.py`
+* Enjoy the app!
+  

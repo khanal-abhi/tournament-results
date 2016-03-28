@@ -19,7 +19,7 @@ CREATE TABLE players (
 );
 
 -- Tournaments table will hold the tournaments id and description(name)
-CREATE TABLE tournament (
+CREATE TABLE tournaments (
   id SERIAL PRIMARY KEY,
   name TEXT
 );
@@ -28,7 +28,7 @@ CREATE TABLE tournament (
 -- and losing player ids, as well as if it is a draw
 CREATE TABLE matches (
   id SERIAL PRIMARY KEY,
-  tournament_id INTEGER REFERENCES tournament(id),
+  tournament_id INTEGER REFERENCES tournaments(id),
   winner INTEGER REFERENCES players(id),
   loser INTEGER REFERENCES players(id),
   draw BOOLEAN
@@ -47,21 +47,3 @@ CREATE VIEW matches_tracker
   FROM players LEFT JOIN matches
     ON players.id = matches.winner OR players.id = matches.loser
   GROUP BY players.id;
-
-
--- SELECT matches_tracker.id, matches_tracker.name, wins_tracker.wins,
---   matches_tracker.matches_played
--- FROM matches_tracker LEFT JOIN wins_tracker
---   ON matches_tracker.id = wins_tracker.id
--- GROUP BY matches_tracker.id, matches_tracker.name, matches_tracker
--- .matches_played, wins_tracker.wins
--- ORDER BY wins_tracker.wins DESC;
-
-
--- SELECT matches.winner, matches.loser
--- FROM matches_tracker
--- WHERE (matches.winner=1 AND matches.loser=1)
--- OR (matches.winner=1 AND matches.loser=1);
-
-INSERT INTO matches (winner, loser, draw)
-    VALUES ()

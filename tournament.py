@@ -60,10 +60,22 @@ def registerPlayer(name):
     Here we will use the pyformat to prevent SQL injection.
     """
     db, cursor = connect()
-    cursor.execute("""INSERT INTO players(name) VALUES (%(p_name)s);""" ,
+    cursor.execute("""INSERT INTO players(name) VALUES (%(p_name)s);""",
                    {"p_name": name})
     db.commit()
     db.close()
+
+
+def registerTournament(name):
+    """
+    Registers a tournament to the database so the multiple matches can be held.
+
+    Args: the tournament's description (need not be unique).
+    """
+
+    db, cursor = connect()
+    cursor.execute("""INSERT INTO tournaments (name) VALUES (%(t)i)"""
+                   % {"t": name})
 
 
 def playerStandings():
@@ -111,15 +123,33 @@ def reportMatch(winner, loser, draw=False, tournament=None):
     Check to see if the pairing has already happened before
     """
     db, cursor = connect()
-    cursor.execute("""
+    pair_query_with_tournament = """
     SELECT count(*) as pairs
 FROM matches
-WHERE (matches.winner=%(win)i AND matches.loser=%(los)i)
-OR (matches.winner=%(los)i AND matches.loser=%(win)i);
-    """ % {
-        "win": winner,
-        "los": loser
-    })
+WHERE ((winner=%(win)i AND loser=%(los)i)
+OR (winner=%(los)i AND loser=%(win)i))
+AND tournament_id=%(t)i;
+    """
+
+    pair_query_without_tournament = """
+        SELECT count(*) as pairs
+    FROM matches
+    WHERE (winner=%(win)i AND loser=%(los)i)
+    OR (winner=%(los)i AND loser=%(win)i);
+        """
+
+    if(tournament):
+        cursor.execute(pair_query_with_tournament % {
+            "win": winner,
+            "los": loser,
+            "t": tournament
+        })
+
+    else:
+        cursor.execute(pair_query_without_tournament % {
+            "win": winner,
+            "los": loser
+        })
 
     data = cursor.fetchone()
 
@@ -142,7 +172,7 @@ OR (matches.winner=%(los)i AND matches.loser=%(win)i);
     """
     Run the query based on inclusion of tournament_id
     """
-    if(tournament):
+    if (tournament):
         cursor.execute(query_with_tournament % {
             "w": winner,
             "l": loser,
