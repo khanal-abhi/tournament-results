@@ -59,7 +59,8 @@ def registerPlayer(name):
     """
     db = connect()
     cursor = db.cursor()
-    cursor.execute("INSERT INTO players (name, matches, wins) VALUES (%(p_name)s, 0, 0);", {"p_name": name})
+    cursor.execute("""INSERT INTO players (name, matches, wins) VALUES
+(%(p_name)s, 0, 0);""", {"p_name": name})
     db.commit()
     db.close()
 
@@ -67,8 +68,8 @@ def registerPlayer(name):
 def playerStandings():
     """Returns a list of the players and their win records, sorted by wins.
 
-    The first entry in the list should be the player in first place, or a player
-    tied for first place if there is currently a tie.
+    The first entry in the list should be the player in first place, or a
+    player tied for first place if there is currently a tie.
 
     Returns:
       A list of tuples, each of which contains (id, name, wins, matches):
@@ -152,8 +153,10 @@ def swissPairings():
     """
 
     """
-    First, lest connect to the table and list the id and name of the players ordered in descending number of wins. This
-    way if we select the consecutive players, they will be the ones adjacent to him or her in the standings.
+    First, lest connect to the table and list the id and name of the players
+    ordered in descending number of wins. This way if we select the
+    consecutive players, they will be the ones adjacent to him or her in the
+    standings.
     """
     db = connect()
     cursor = db.cursor()
@@ -164,8 +167,10 @@ def swissPairings():
     """)
 
     """
-    toggler toggles the result list and the tuple source. After each 2 records in the cursor, the two consecutive records
-    are saved on a tuple and the tuple is appended to the result list. The tuple is cleared and the toggler starts over.
+    toggler toggles the result list and the tuple source. After each 2 records
+    in the cursor, the two consecutive records are saved on a tuple and the
+    tuple is appended to the result list. The tuple is cleared and the toggler
+    starts over.
     """
     toggler = 0
     tupler = []
@@ -173,15 +178,18 @@ def swissPairings():
     for row in cursor:
 
         """
-        By the time control reaches here, tupler has one or 0 players so at least this player needs to be appended
+        By the time control reaches here, tupler has one or 0 players so at
+        least this player needs to be appended
         """
         tupler.append(row[0])
         tupler.append(row[1])
         toggler += 1
 
         """
-        This is only possible if there are two players in the tupler list. So wee need to create a tuple from the list
-        and append the tuple to the result list. The tupler is then cleared out and toggler reset to 0 so that it may
+        This is only possible if there are two players in the tupler list. So
+        we need to create a tuple from the list and append the tuple to the
+        result list. The tupler is then cleared out and toggler reset to 0 so
+        that it may
         help in adding two more players.
         """
         if toggler >= 2:
