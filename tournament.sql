@@ -6,6 +6,11 @@
 -- You can write comments in this file by starting them with two dashes, like
 -- these lines here.
 
-create table tournament (
-  
-)
+-- We only need one table for this project.
+
+CREATE TABLE IF NOT EXISTS players (
+  id SERIAL,
+  name TEXT,
+  matches INTEGER,
+  wins INTEGER
+);
