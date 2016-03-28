@@ -5,6 +5,8 @@
 
 import psycopg2
 
+pairs = []
+
 def connect():
     """Connect to the PostgreSQL database.  Returns a database connection."""
     return psycopg2.connect("dbname=tournament")
@@ -96,6 +98,12 @@ def reportMatch(winner, loser):
       loser:  the id number of the player who lost
     """
 
+    """
+    Raise an exception if the pair has already competed
+    """
+    pair = (winner, loser)
+    if pairs.__contains__(pair):
+        raise Exception("pair already competed!")
 
     """
     First, lets increment the wins and matches for the winner
@@ -119,6 +127,8 @@ def reportMatch(winner, loser):
         matches = matches + 1
         WHERE
         id = %(loser)i""" % {"loser": loser})
+
+    pairs.append((winner, loser))
 
     db.commit()
     db.close()
