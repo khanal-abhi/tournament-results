@@ -33,3 +33,17 @@ CREATE TABLE matches (
   loser INTEGER REFERENCES players(id),
   draw BOOLEAN
 );
+
+CREATE VIEW wins_tracker
+  AS
+  SELECT players.id, players.name, COUNT(matches.winner) AS wins
+  FROM players LEFT JOIN matches
+    ON players.id = matches.winner
+  GROUP BY players.id;
+
+CREATE VIEW matches_tracker
+  AS
+  SELECT players.id, players.name, COUNT(matches) AS matches_played
+  FROM players LEFT JOIN matches
+    ON players.id = matches.winner OR players.id = matches.loser
+  GROUP BY players.id;

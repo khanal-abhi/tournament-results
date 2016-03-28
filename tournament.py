@@ -7,15 +7,20 @@ import psycopg2
 
 pairs = []
 
-def connect():
+
+def connect(db_name="tournament"):
     """Connect to the PostgreSQL database.  Returns a database connection."""
-    return psycopg2.connect("dbname=tournament")
+    try:
+        db = psycopg2.connect("dbname={}".format(db_name))
+        cursor = db.cursor()
+        return db, cursor
+    except:
+        print "Cannot connect to the database."
 
 
 def deleteMatches():
     """Remove all the match records from the database."""
-    db = connect()
-    cursor = db.cursor();
+    db, cursor = connect()
     cursor.execute("""
     UPDATE players SET matches=0, wins=0
     WHERE TRUE;
@@ -23,18 +28,18 @@ def deleteMatches():
     db.commit()
     db.close()
 
+
 def deletePlayers():
     """Remove all the player records from the database."""
-    db = connect()
-    cursor = db.cursor()
+    db, cursor = connect()
     cursor.execute("DELETE FROM players WHERE TRUE;")
     db.commit()
     db.close()
 
+
 def countPlayers():
     """Returns the number of players currently registered."""
-    db = connect()
-    cursor = db.cursor()
+    db, cursor = connect()
     cursor.execute("SELECT count(*) AS count FROM players;")
     result = cursor.fetchone()
     result = result[0]
@@ -57,8 +62,7 @@ def registerPlayer(name):
     """
     Here we will use the pyformat to prevent SQL injection.
     """
-    db = connect()
-    cursor = db.cursor()
+    db, cursor = connect()
     cursor.execute("""INSERT INTO players (name, matches, wins) VALUES
 (%(p_name)s, 0, 0);""", {"p_name": name})
     db.commit()
@@ -79,8 +83,7 @@ def playerStandings():
         matches: the number of matches the player has played
     """
 
-    db = connect()
-    cursor = db.cursor()
+    db, cursor = connect()
     """
     fetch all the players with the matches and wins data
     """
@@ -91,7 +94,7 @@ def playerStandings():
     return result
 
 
-def reportMatch(winner, loser):
+def reportMatch(winner, loser, draw=False):
     """Records the outcome of a single match between two players.
 
     Args:
@@ -100,17 +103,14 @@ def reportMatch(winner, loser):
     """
 
     """
-    Raise an exception if the pair has already competed
+    Check to see if the pairing has already happebed before
     """
-    pair = (winner, loser)
-    if pairs.__contains__(pair):
-        raise Exception("pair already competed!")
+
 
     """
     First, lets increment the wins and matches for the winner
     """
-    db = connect()
-    cursor = db.cursor()
+    db, cursor = connect()
     cursor.execute("""
     UPDATE players
     SET
@@ -135,7 +135,6 @@ def reportMatch(winner, loser):
     db.close()
 
 
-
 def swissPairings():
     """Returns a list of pairs of players for the next round of a match.
 
@@ -158,8 +157,7 @@ def swissPairings():
     consecutive players, they will be the ones adjacent to him or her in the
     standings.
     """
-    db = connect()
-    cursor = db.cursor()
+    db, cursor = connect()
     cursor.execute("""
     SELECT id, name
     FROM players
@@ -196,7 +194,6 @@ def swissPairings():
             toggler = 0
             result.append(tuple(tupler))
             tupler = []
-
 
     db.close()
     return result
