@@ -21,10 +21,7 @@ def connect(db_name="tournament"):
 def deleteMatches():
     """Remove all the match records from the database."""
     db, cursor = connect()
-    cursor.execute("""
-    UPDATE players SET matches=0, wins=0
-    WHERE TRUE;
-    """)
+    cursor.execute("DELETE FROM matches WHERE TRUE;")
     db.commit()
     db.close()
 
@@ -63,8 +60,8 @@ def registerPlayer(name):
     Here we will use the pyformat to prevent SQL injection.
     """
     db, cursor = connect()
-    cursor.execute("""INSERT INTO players (name, matches, wins) VALUES
-(%(p_name)s, 0, 0);""", {"p_name": name})
+    cursor.execute("""INSERT INTO players(name) VALUES (%(p_name)s);""" ,
+                   {"p_name": name})
     db.commit()
     db.close()
 
@@ -87,14 +84,22 @@ def playerStandings():
     """
     fetch all the players with the matches and wins data
     """
-    cursor.execute("SELECT id, name, wins, matches FROM players;")
+    cursor.execute("""
+    SELECT matches_tracker.id, matches_tracker.name, wins_tracker.wins,
+  matches_tracker.matches_played
+FROM matches_tracker LEFT JOIN wins_tracker
+  ON matches_tracker.id = wins_tracker.id
+GROUP BY matches_tracker.id, matches_tracker.name, matches_tracker
+.matches_played, wins_tracker.wins
+ORDER BY wins_tracker.wins DESC;
+    """)
     result = cursor.fetchall()
     db.close()
 
     return result
 
 
-def reportMatch(winner, loser, draw=False):
+def reportMatch(winner, loser, draw=False, tournament=None):
     """Records the outcome of a single match between two players.
 
     Args:
@@ -103,33 +108,54 @@ def reportMatch(winner, loser, draw=False):
     """
 
     """
-    Check to see if the pairing has already happebed before
-    """
-
-
-    """
-    First, lets increment the wins and matches for the winner
+    Check to see if the pairing has already happened before
     """
     db, cursor = connect()
     cursor.execute("""
-    UPDATE players
-    SET
-    matches = matches + 1, wins = wins + 1
-    WHERE
-    id = %(winner)i""" % {"winner": winner})
+    SELECT count(*) as pairs
+FROM matches
+WHERE (matches.winner=%(win)i AND matches.loser=%(los)i)
+OR (matches.winner=%(los)i AND matches.loser=%(win)i);
+    """ % {
+        "win": winner,
+        "los": loser
+    })
+
+    data = cursor.fetchone()
+
+    if data[0] > 0:
+        raise Exception("this pairing has already be matched up!")
 
     """
-    Next, lets increment the matches for the loser
+    Create the query. If tournament is provided, use tournament id
+    """
+    query_with_tournament = """
+    INSERT INTO matches (winner, loser, draw, tournament_id)
+    VALUES (%(w)i, %(l)i, %(d)s, %(t)i)
     """
 
-    cursor.execute("""
-        UPDATE players
-        SET
-        matches = matches + 1
-        WHERE
-        id = %(loser)i""" % {"loser": loser})
+    query_without_tournament = """
+        INSERT INTO matches (winner, loser, draw)
+        VALUES (%(w)i, %(l)i, %(d)s)
+        """
 
-    pairs.append((winner, loser))
+    """
+    Run the query based on inclusion of tournament_id
+    """
+    if(tournament):
+        cursor.execute(query_with_tournament % {
+            "w": winner,
+            "l": loser,
+            "d": draw,
+            "t": tournament
+        })
+
+    else:
+        cursor.execute(query_without_tournament % {
+            "w": winner,
+            "l": loser,
+            "d": draw,
+        })
 
     db.commit()
     db.close()
@@ -157,12 +183,7 @@ def swissPairings():
     consecutive players, they will be the ones adjacent to him or her in the
     standings.
     """
-    db, cursor = connect()
-    cursor.execute("""
-    SELECT id, name
-    FROM players
-    ORDER BY wins DESC;
-    """)
+    cursor = playerStandings()
 
     """
     toggler toggles the result list and the tuple source. After each 2 records
@@ -195,5 +216,4 @@ def swissPairings():
             result.append(tuple(tupler))
             tupler = []
 
-    db.close()
     return result
